@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projeto Betha</title>
+	<script src="https://code.angularjs.org/1.7.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css">
+<head>
+  <style>
+		form {
+			background-color: rgb(231, 230, 243);
+        }
+    </style>
+</head>
+<body ng-controller="CadastroCtrl">
+
+  <form class="form-signin" name="cadform">
+    <div class="form-group"><img src="https://www.betha.com.br/static/logo-betha-topo-f1d78d5ae229a9be6bbc0f8387835c90.svg" alt="" height="100px" width="300px" ></div>
+                        
+    <label for="usuario">Usuário</label>
+    <input type="text" class="form-control" id="cadastrologin" name="usuario" ng-model=cadastro.usuario ng-required=true>
+      
+    <label for="senha">Senha</label>
+    <input type="password" class="form-control" id="cadastrosenha" name="senha" ng-model=cadastro.senha ng-required=true>
+            
+    <label for="confirmasenha">Confirmação de Senha</label> 
+    <input type="password" class="form-control" id="confirmarsenha" ng-model=cadastro.confirmarSenha ng-required=true>
+              
+    <button class="btn btn-primary" id="cadastrar" ng.disable="cadform.$invalid" ng-click="concluir(cadastro)">Concluir</button>
+    <button class="btn btn-primary" onclick="window.location.href = 'acesso.html'">Voltar</button>
+  </form>
+    <script src="script.js"></script>
+</body>
+</html>

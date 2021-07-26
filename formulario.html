@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projeto Betha</title>
+	<script src="https://code.angularjs.org/1.7.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css">
+ 
+		<style>
+		form {
+      background-color: rgb(231, 230, 243);
+		}
+
+	</style>
+</head>
+<body ng-controller="FormularioCtrl">
+  <form class="form-signin" name="dadosForm">
+	<div class="container">
+		<div class="form-group"><img src="https://www.betha.com.br/static/logo-betha-topo-f1d78d5ae229a9be6bbc0f8387835c90.svg" alt="" height="100px" width="300px" ></div>
+        <div class="form-row">
+          <div class="form-signin">
+            <label for="inputNome">Nome</label>
+            <input type="text" class="form-control" id="inputNome" ng-model="formulario.nome" required placeholder="Este Campo é obrigatório">
+          </div>
+        <br/>
+          <div class="form-signin">
+            <label for="inputSobrenome">Sobrenome</label>
+            <input type="text" class="form-control" id="inputSobrenome" ng-model="formulario.sobrenome" required placeholder="Este Campo é obrigatório">
+          </div>
+          <div class="form-signin">
+            <label for="inputCPF">CPF</label>
+            <input type="text" class="form-control" id="inputCPF"  ng-model="formulario.cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required placeholder="000.000.000-00">
+            <small class="form-text text-muted">Esse campo é obrigatório</small>
+          </div>
+          <div class="form-signin">
+            <label for="inputTel">Telefone</label>
+            <input type="text" class="form-control" id="inputTel" ng-model="formulario.telefone" required placeholder="(xx) xxxxx-xxxx">
+            <small class="form-text text-muted">Esse campo é obrigatório</small>
+          </div>
+        <div class="form-signin">
+          <label for="inputEndereco">Endereço</label>
+          <input type="text" class="form-control" id="inputEndereco" ng-model="formulario.endereco" placeholder="Rua das Flores, nº 99">
+        </div>
+        <div class="form-signin">
+          <label for="inputBairro">Bairro</label>
+          <input type="text" class="form-control" id="inputBairro" ng-model="formulario.bairro" placeholder="Nome do Bairro">
+        </div>
+        </div>
+            <div class="form-row">
+              <div class="form-signin">
+              <label for="inputCidade">Cidade</label>
+              <input type="text" class="form-control" id="inputCidade" ng-model="formulario.cidade">
+              </div>
+              <div class="form-signin">
+              <label for="inputEstado">Estado</label>
+              <select id="inputEstado" ng-model="formulario.estado" class="form-control">
+              <option selected>Escolher</option>
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+              </select>
+            </div>
+          </div>
+  <div class="form-signin">
+    <label for="inputCEP">CEP</label>
+    <input type="text" class="form-control" id="inputCEP" ng-model="formulario.cep">
+  </div>
+  <div>
+     <button type="submit" class="btn btn-primary" name="enviar" ng-click="enviar(formulario)"  ng-disable="dadosForm.$invalid">Enviar</button>
+     <button type="submit" class="btn btn-primary" onclick="window.location.href = 'acesso.html'">Cancelar</button>
+  </div>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>

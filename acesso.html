@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projeto Betha</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css">
+	<style>
+		form {
+			background-color: rgb(231, 230, 243);
+		}
+	</style>
+</head>
+
+<body ng-controller="LoginCtrl">
+
+	<form class="form-signin" name="loginForm">
+		<div class="form-group"><img src="https://www.betha.com.br/static/logo-betha-topo-f1d78d5ae229a9be6bbc0f8387835c90.svg" alt="" height="100px" width="300px" ></div>
+					
+	  	<label for="usuario">Usuário</label>
+	 	<input type="text" class="form-control" id="usuario" ng-model="login.usuario" ng-required="true">
+
+		<label for="senha">Senha</label>
+		<input type="password" class="form-control" id="senha" ng-model="login.senha">
+		<small id="dicasenha" class="form-text text-muted">Não compartilhe seu usuário e senha com ninguém.</small><br/>
+
+		<div class="checkbox mb-3">
+			<label>
+			  <input type="checkbox" value="remember-me" name="salvarUsuario" ng-model="login.salvarUsuario"> Lembrar de mim
+			</label>
+		  </div>
+		<button n class="btn btn-primary" name="acesso" ng-click="entrar(login)" ng-disabled="loginForm.$invalid">Entrar</button>
+		<button n class="btn btn-primary" name="cadastro" ng-click="cadastrar()">Cadastrar</button>	  
+	</form>
+	<script src="script.js"></script>
+</body>
+</html>
